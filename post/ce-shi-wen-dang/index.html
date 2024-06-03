@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>测试文档 | 荷叶边差</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://tenrayes.github.io/favicon.ico?v=1717425330488">
+<link rel="stylesheet" href="https://tenrayes.github.io/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="她看见了自己的过去，伙伴相聚携手共战。
+她看见了梦中的少女，剑光如翼修正未来。
+她走进梦境，走向少女，
+听到那首久未有人哼唱的歌谣。
+流淌过时间的漫长遥远，
+她轻柔而坚定地拥抱了现在。
+
+..." />
+    <meta name="keywords" content="测试" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://tenrayes.github.io">
+        <img src="https://tenrayes.github.io/images/avatar.png?v=1717425330488" class="site-logo">
+        <h1 class="site-title">荷叶边差</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="https://Larch4.github.io/2.html" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/Larch4" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+          <a class="social-link" href="https://twitter.com/Cedar2352" target="_blank">
+            <i class="fab fa-twitter"></i>
+          </a>
+        
+      
+        
+      
+        
+          <a class="social-link" href="https://www.zhihu.com/people/14-91-60-81" target="_blank">
+            <i class="fab fa-zhihu"></i>
+          </a>
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      记录一切的一切
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://tenrayes.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">测试文档</h2>
+            <div class="post-date">2024-05-07</div>
+            
+              <div class="feature-container" style="background-image: url('https://tenrayes.github.io/post-images/ce-shi-wen-dang.jpg')">
+              </div>
+            
+            <div class="post-content" v-pre>
+              <p><img src="https://tenrayes.github.io/post-images/1715084749463.jpg" alt="" loading="lazy">她看见了自己的过去，伙伴相聚携手共战。<br>
+她看见了梦中的少女，剑光如翼修正未来。<br>
+她走进梦境，走向少女，<br>
+听到那首久未有人哼唱的歌谣。<br>
+流淌过时间的漫长遥远，<br>
+她轻柔而坚定地拥抱了现在。<br>
+<img src="https://tenrayes.github.io/post-images/1715084773504.png" alt="" loading="lazy"></p>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://tenrayes.github.io/tag/XRg2G1acE/" class="tag">
+                    测试
+                  </a>
+                
+              </div>
+            
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '070bd1f10f8a50592b12',
+        clientSecret: '0ab8088613f688b826c975fe01ef05b4d35a813e',
+        repo: 'tenrayes.github.io',
+        owner: 'Tenrayes',
+        admin: ['Tenrayes'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+
+    <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      document.querySelectorAll('pre').forEach((pre) => {
+        const button = document.createElement('button');
+        button.innerText = 'Copy';
+        button.classList.add('copy-button');
+        pre.style.position = 'relative'; // 确保pre元素相对定位
+        pre.appendChild(button);
+        
+        button.addEventListener('click', () => {
+          const code = pre.querySelector('code').innerText;
+          navigator.clipboard.writeText(code).then(() => {
+            button.innerText = 'Copied';
+            setTimeout(() => {
+              button.innerText = 'Copy';
+            }, 2000);
+          });
+        });
+      });
+    });
+    </script>
+
+  </body>
+</html>

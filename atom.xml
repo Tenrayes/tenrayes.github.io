@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://tenrayes.github.io</id>
+    <title>荷叶边差</title>
+    <updated>2024-06-03T14:37:22.482Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://tenrayes.github.io"/>
+    <link rel="self" href="https://tenrayes.github.io/atom.xml"/>
+    <subtitle>记录一切的一切</subtitle>
+    <logo>https://tenrayes.github.io/images/avatar.png</logo>
+    <icon>https://tenrayes.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2024, 荷叶边差</rights>
+    <entry>
+        <title type="html"><![CDATA[教育部 住房和城乡建设部关于印发 《幼儿园标准设计样图》的通知]]></title>
+        <id>https://tenrayes.github.io/post/jianzhu/</id>
+        <link href="https://tenrayes.github.io/post/jianzhu/">
+        </link>
+        <updated>2024-06-03T14:31:32.000Z</updated>
+        <content type="html"><![CDATA[<p>各省、自治区、直辖市教育厅（教委）、住房城乡建设厅（委、局），新疆生产建设兵团教育局、建设局：</p>
+<p>根据《住房和城乡建设部关于下达2012年建设标准编制项目计划的通知》（建标〔2012〕192号）的要求，教育部、住房城乡建设部组织东南大学建筑设计研究院有限公司编制了《幼儿园标准设计样图》，并已经有关部门会审通过，现印发给你们，请参照执行。</p>
+<p>《幼儿园标准设计样图》的管理由教育部负责，具体解释工作由东南大学建筑设计研究院有限公司负责。</p>
+<p>附件：幼儿园标准设计样图</p>
+<p>教育部 住房和城乡建设部</p>
+<p>2019年1月17日<br>
+http://www.moe.gov.cn/srcsite/A03/s3012/201901/W020190130340121939147.pdf</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[解决“Hyper-V虚拟交换机无法显示交换机列表”的问题]]></title>
+        <id>https://tenrayes.github.io/post/hyper-v-1/</id>
+        <link href="https://tenrayes.github.io/post/hyper-v-1/">
+        </link>
+        <updated>2024-05-15T02:25:33.000Z</updated>
+        <content type="html"><![CDATA[<p>1.使用 PowerShell 创建一个虚拟交换机。以管理员身份打开 PowerShell，运行以下命令：</p>
+<pre><code>    New-VMSwitch -Name &quot;ExternalSwitch&quot; -NetAdapterName &quot;Ethernet&quot; -AllowManagementOS $true
+</code></pre>
+<p>其中<code>-Name</code>指定虚拟交换机的名称，<code>-NetAdapterName</code>指定要绑定的物理网络适配器。</p>
+<p>完成后再到Hyper-V管理器中查看时候能列出虚拟交换机。</p>
+<p>2.使用过PowerShell删除当前的虚拟交换机。在PowerShell中运行<code>Get-VMSwitch</code>列出当前的虚拟交换机，然后使用<code>Remove-VMSwitch</code>将当前交换机删除。</p>
+<pre><code>    Remove-VMSwitch -Name “My Switch”
+</code></pre>
+<p>其中<code>-Name</code>指定虚拟交换机的名称。</p>
+<p>完成后重新到Hyper-V管理器中创建虚拟交换机，看是否能正常列出。</p>
+<p>3.重启Hyper-V虚拟机管理服务。打开任务管理器或者<code>services.msc</code>，找到Hyper-V虚拟机管理服务（Hyper-V Virtual Machine Management Service，VMMS），然后手动重启服务。</p>
+<p>4.重新安装网络适配器。有时网络适配器的问题会导致此错误。尝试卸载并重新安装网络适配器驱动程序。</p>
+<p>5.重新安装 Hyper-V。如果上述步骤不起作用，考虑重新安装系统上的 Hyper-V 角色。</p>
+<p>6.如果是采用的预览版的 Windows 11，可以通过重置的方法解决问题，该方法适用于上述方法无法解决的情况下使用的。<br>
+具体方法：<br>
+<code>设置</code> &gt; <code>系统 </code> &gt; <code>恢复</code> &gt; <code>使用Windows更新修复问题</code> &gt; <code>立即重新安装</code></p>
+<p>该方法不会使得系统上的所有数据清除，应用、设置、个人文件会得到保留。如果您有所顾虑，可以先做好备份后再使用该方法。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[沉浸于二次元会变成什么样？]]></title>
+        <id>https://tenrayes.github.io/post/chen-jin-yu-er-ci-yuan-hui-bian-cheng-shi-me-yang/</id>
+        <link href="https://tenrayes.github.io/post/chen-jin-yu-er-ci-yuan-hui-bian-cheng-shi-me-yang/">
+        </link>
+        <updated>2024-05-09T15:30:33.000Z</updated>
+        <content type="html"><![CDATA[<p>1、爱攒钱，工资绝大部分都攒下来。身上行头经常加在一起不到200，理发不超过30，不染不烫不设计发型，平时能去食堂就去食堂吃，最大一笔消费是买手机买电脑。</p>
+<p>2、不会打扮，不会穿搭，见面前洗个头就是最高礼仪了。</p>
+<p>3、不爱去漫展，也不爱买动漫周边，玩二次元手游也是月卡甚至白嫖，从不氪金消费。</p>
+<p>4、平时爱独处，从上学开始就喜欢一个人独来独往，自己一个人去漫无目的的逛街、一个人去看电影、一个人去吃火锅、一个人去旅游、一个人去医院看病......，但从没觉得这样很惨很可怜，反而很疑惑为什么周围的人得知自己去看电影就笃定和其他人一起去的，甚至推论出恋爱了，每次都要解释半天，之后索性不解释了。</p>
+<p>5、微社恐，不排斥接触人，能正常交流。但人多会紧张，饭局上有不认识的人会觉得不舒服，大街上见到美女要微信什么的从来不敢。</p>
+<p>6、极少发微博、朋友圈。业余爱好就是刷刷知乎，刷刷B站，除了看动漫就是很喜欢刷数码相关视频，对旗舰机性能如视家珍，但自己手机是红米，iQOO，真我等等。因为性价比高。</p>
+<p>7、不爱说谎，爱直球。但自我，很少考虑其他人的感受，言语伤害过一些人。</p>
+<p>8、恋爱经历少或者接近没有，且不会主动脱离单身。喜欢漂亮的女生，但是遇到漂亮的又感到卑微不敢搭话。不纠缠，对方两次不回就主动放弃。</p>
+<p>9、从外卖小哥手里拿走外卖，从收银员手里拿走商品都会说谢谢，平时害怕给别人添麻烦，哪怕自己受到损失也会忍着，对方生气会主动道歉。会对别人对自己的关心很感谢、感动。</p>
+<p>10、不吸烟不喝酒，不夜场不按摩，生活简单。就连生日也是一样，蛋糕都没有，生日当天吃顿好的，买个平时不舍得买的东西就当犒劳自己了。</p>
+<figure data-type="image" tabindex="1"><img src="https://tenrayes.github.io/post-images/1715270153923.jpg" alt="" loading="lazy"></figure>
+<p>转载自知乎<br>
+https://www.zhihu.com/collection/952988947</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[测试文档]]></title>
+        <id>https://tenrayes.github.io/post/ce-shi-wen-dang/</id>
+        <link href="https://tenrayes.github.io/post/ce-shi-wen-dang/">
+        </link>
+        <updated>2024-05-07T11:42:50.000Z</updated>
+        <content type="html"><![CDATA[<p><img src="https://tenrayes.github.io/post-images/1715084749463.jpg" alt="" loading="lazy">她看见了自己的过去，伙伴相聚携手共战。<br>
+她看见了梦中的少女，剑光如翼修正未来。<br>
+她走进梦境，走向少女，<br>
+听到那首久未有人哼唱的歌谣。<br>
+流淌过时间的漫长遥远，<br>
+她轻柔而坚定地拥抱了现在。<br>
+<img src="https://tenrayes.github.io/post-images/1715084773504.png" alt="" loading="lazy"></p>
+]]></content>
+    </entry>
+</feed>

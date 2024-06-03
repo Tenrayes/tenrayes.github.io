@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>解决“Hyper-V虚拟交换机无法显示交换机列表”的问题 | 荷叶边差</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://tenrayes.github.io/favicon.ico?v=1717425330488">
+<link rel="stylesheet" href="https://tenrayes.github.io/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="1.使用 PowerShell 创建一个虚拟交换机。以管理员身份打开 PowerShell，运行以下命令：
+    New-VMSwitch -Name &quot;ExternalSwitch&quot; -NetAdapterName ..." />
+    <meta name="keywords" content="技术文档" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://tenrayes.github.io">
+        <img src="https://tenrayes.github.io/images/avatar.png?v=1717425330488" class="site-logo">
+        <h1 class="site-title">荷叶边差</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="https://Larch4.github.io/2.html" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/Larch4" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+          <a class="social-link" href="https://twitter.com/Cedar2352" target="_blank">
+            <i class="fab fa-twitter"></i>
+          </a>
+        
+      
+        
+      
+        
+          <a class="social-link" href="https://www.zhihu.com/people/14-91-60-81" target="_blank">
+            <i class="fab fa-zhihu"></i>
+          </a>
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      记录一切的一切
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://tenrayes.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">解决“Hyper-V虚拟交换机无法显示交换机列表”的问题</h2>
+            <div class="post-date">2024-05-15</div>
+            
+              <div class="feature-container" style="background-image: url('https://tenrayes.github.io/post-images/hyper-v-1.png')">
+              </div>
+            
+            <div class="post-content" v-pre>
+              <p>1.使用 PowerShell 创建一个虚拟交换机。以管理员身份打开 PowerShell，运行以下命令：</p>
+<pre><code>    New-VMSwitch -Name &quot;ExternalSwitch&quot; -NetAdapterName &quot;Ethernet&quot; -AllowManagementOS $true
+</code></pre>
+<p>其中<code>-Name</code>指定虚拟交换机的名称，<code>-NetAdapterName</code>指定要绑定的物理网络适配器。</p>
+<p>完成后再到Hyper-V管理器中查看时候能列出虚拟交换机。</p>
+<p>2.使用过PowerShell删除当前的虚拟交换机。在PowerShell中运行<code>Get-VMSwitch</code>列出当前的虚拟交换机，然后使用<code>Remove-VMSwitch</code>将当前交换机删除。</p>
+<pre><code>    Remove-VMSwitch -Name “My Switch”
+</code></pre>
+<p>其中<code>-Name</code>指定虚拟交换机的名称。</p>
+<p>完成后重新到Hyper-V管理器中创建虚拟交换机，看是否能正常列出。</p>
+<p>3.重启Hyper-V虚拟机管理服务。打开任务管理器或者<code>services.msc</code>，找到Hyper-V虚拟机管理服务（Hyper-V Virtual Machine Management Service，VMMS），然后手动重启服务。</p>
+<p>4.重新安装网络适配器。有时网络适配器的问题会导致此错误。尝试卸载并重新安装网络适配器驱动程序。</p>
+<p>5.重新安装 Hyper-V。如果上述步骤不起作用，考虑重新安装系统上的 Hyper-V 角色。</p>
+<p>6.如果是采用的预览版的 Windows 11，可以通过重置的方法解决问题，该方法适用于上述方法无法解决的情况下使用的。<br>
+具体方法：<br>
+<code>设置</code> &gt; <code>系统 </code> &gt; <code>恢复</code> &gt; <code>使用Windows更新修复问题</code> &gt; <code>立即重新安装</code></p>
+<p>该方法不会使得系统上的所有数据清除，应用、设置、个人文件会得到保留。如果您有所顾虑，可以先做好备份后再使用该方法。</p>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://tenrayes.github.io/tag/4ZjqOYT7A/" class="tag">
+                    技术文档
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://tenrayes.github.io/post/chen-jin-yu-er-ci-yuan-hui-bian-cheng-shi-me-yang/">
+                  <h3 class="post-title">
+                    沉浸于二次元会变成什么样？
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '070bd1f10f8a50592b12',
+        clientSecret: '0ab8088613f688b826c975fe01ef05b4d35a813e',
+        repo: 'tenrayes.github.io',
+        owner: 'Tenrayes',
+        admin: ['Tenrayes'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+
+    <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      document.querySelectorAll('pre').forEach((pre) => {
+        const button = document.createElement('button');
+        button.innerText = 'Copy';
+        button.classList.add('copy-button');
+        pre.style.position = 'relative'; // 确保pre元素相对定位
+        pre.appendChild(button);
+        
+        button.addEventListener('click', () => {
+          const code = pre.querySelector('code').innerText;
+          navigator.clipboard.writeText(code).then(() => {
+            button.innerText = 'Copied';
+            setTimeout(() => {
+              button.innerText = 'Copy';
+            }, 2000);
+          });
+        });
+      });
+    });
+    </script>
+
+  </body>
+</html>
